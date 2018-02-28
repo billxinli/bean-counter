@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types';
 import Header from '../../common/Header'
 import Routes from '../../routes'
 import 'typeface-roboto'
@@ -30,9 +29,5 @@ const App = (props) => {
     </Reboot>
   )
 }
-
-// App.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
 
 export default App

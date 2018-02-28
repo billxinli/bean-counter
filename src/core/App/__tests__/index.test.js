@@ -1,15 +1,9 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
-import App from '../';
-import { Route, Link, MemoryRouter } from 'react-router-dom'
+import renderer from 'react-test-renderer';
+import App from '../'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(
-  	<MemoryRouter>
-  		<App />
-  	</MemoryRouter>, 
-  	div
-  );
-  unmountComponentAtNode(div);
+test('App snapshot test', () => {
+  const component = renderer.create(<App />);
+  const tree = component.toJson();
+  expect(tree).toMatchSnapshot();
 });
